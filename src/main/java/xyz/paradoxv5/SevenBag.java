@@ -18,19 +18,4 @@ public class SevenBag implements java.util.function.Supplier<SevenBag.Tetromino>
     return tetrominoBag.remove(random.nextInt(tetrominoBag.size()));
   }
   
-  public static final class Test {
-    SevenBag sevenBag;
-    @org.junit.jupiter.api.BeforeEach public void init() { sevenBag = new SevenBag(); }
-    
-    @org.junit.jupiter.api.Test public void testGet() {
-      HashSet<Tetromino> testSet = new java.util.HashSet<>();
-    
-      for(byte test_count = 0; test_count < 5; ++test_count) {
-        testSet.clear();
-        for(byte piece_count = 0; piece_count < Tetromino.SET.size(); ++piece_count)
-          testSet.add(sevenBag.get());
-        org.junit.jupiter.api.Assertions.assertEquals(Tetromino.SET, testSet);
-      }
-    }
-  }
 }
