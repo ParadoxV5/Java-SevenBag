@@ -1,19 +1,17 @@
 package xyz.paradoxv5;
-import org.junit.jupiter.api.*;
 
-import java.util.HashSet;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.RepeatedTest;
+import java.util.TreeSet;
+
 public final class SevenBagTest {
-  SevenBag sevenBag;
-  @org.junit.jupiter.api.BeforeEach public void init() { sevenBag = new SevenBag(); }
   
-  @Test public void testGet() {
-    HashSet<SevenBag.Tetromino> testSet = new HashSet<>();
-    
-    for(byte test_count = 0; test_count < 5; ++test_count) {
-      testSet.clear();
-      for(byte piece_count = 0; piece_count < SevenBag.Tetromino.SET.size(); ++piece_count)
-        testSet.add(sevenBag.get());
-      org.junit.jupiter.api.Assertions.assertEquals(SevenBag.Tetromino.SET, testSet);
-    }
+  @RepeatedTest(3) public void test_get_everyPiece() {
+    SevenBag sevenBag = new SevenBag();
+    TreeSet<SevenBag.Tetromino> testSet = new TreeSet<>();
+    for(byte c = 0; c < 7; ++c)
+      testSet.add(sevenBag.get());
+    assertEquals(SevenBag.Tetromino.SET, testSet);
   }
+  
 }
