@@ -1,21 +1,30 @@
 package xyz.paradoxv5;
-import java.util.HashSet;
-import java.util.random.RandomGenerator;
+import java.util.*;
 
 public class SevenBag implements java.util.function.Supplier<SevenBag.Tetromino> {
-  public static enum Tetromino {
+  public enum Tetromino {
     T, I, O, J, L, S, Z;
-    protected static final HashSet<Tetromino> SET = new HashSet<>(java.util.Arrays.asList(values()));
+    static final HashSet<Tetromino> SET = new HashSet<>(Arrays.asList(values()));
   }
   
-  protected final RandomGenerator random;
-  public SevenBag(RandomGenerator random) { this.random = random; }
-  public SevenBag() { this(new java.util.Random()); }
+  /* Note:
+    The next Tetromino is the **last** element of the ArrayList.
+    Removing the last element of a List is O(1) whereas it’s O(n) for the first.
+    This design optimizes the bag for shuffling (as a RandomAccess) and single-end de-queuing
+  */
+  protected ArrayList<Tetromino> bag = new ArrayList<>(7);
   
-  protected java.util.LinkedList<Tetromino> tetrominoBag = new java.util.LinkedList<>();
+  protected final Random random;
+  public SevenBag(Random random) {
+    this.random = random;
+  }
+  public SevenBag() { this(null); }
+      
   @Override public Tetromino get() {
-    if(tetrominoBag.isEmpty()) tetrominoBag.addAll(Tetromino.SET);
-    return tetrominoBag.remove(random.nextInt(tetrominoBag.size()));
+    if(bag.isEmpty()) {
+      bag.addAll(Tetromino.SET);
+      Collections.shuffle(bag, random);
+    }
+    return bag.remove(bag.size() - 1);
   }
-  
 }
