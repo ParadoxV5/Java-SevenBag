@@ -1,0 +1,10 @@
+# JetBrains
+/.idea/
+
+# Eclipse
+/.settings/
+/.project
+/.classpath
+
+# Java
+/target/

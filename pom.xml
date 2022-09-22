@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>xyz.paradoxv5</groupId>
+  <artifactId></artifactId>
+  <name></name>
+  <version></version>
+  
+  <developers><developer>
+    <id>ParadoxV5</id>
+    <url>https://github.com/ParadoxV5</url>
+  </developer></developers>
+  <licenses><license>
+    <name></name>
+    <comments></comments>
+    <url></url>
+  </license></licenses>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <links>
+            <link>https://javadoc.io/doc/org.jetbrains/annotations/23.0/</link>
+          </links>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass></mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+  
+  <!--<repositories>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/ParadoxV5/</url>
+    </repository>
+  </repositories>-->
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>[23.0,23.1)</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>[5.9,5.10)</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  
+  <scm>
+    <url>https://github.com/ParadoxV5/</url>
+    <developerConnection>scm:git:https://github.com/ParadoxV5/</developerConnection>
+  </scm>
+  <distributionManagement><repository>
+    <id>github</id>
+    <name>GitHub Packages</name>
+    <url>https://maven.pkg.github.com/ParadoxV5/</url>
+  </repository></distributionManagement>
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/ParadoxV5//issues</url>
+  </issueManagement>
+  
+</project>
