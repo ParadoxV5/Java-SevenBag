@@ -1,10 +1,11 @@
 package xyz.paradoxv5;
 import java.util.*;
+import org.jetbrains.annotations.*;
 
 public class SevenBag implements java.util.function.Supplier<SevenBag.Tetromino> {
   public enum Tetromino {
     T, I, O, J, L, S, Z;
-    static final Set<Tetromino> SET = Set.of(values());
+    public static final @Unmodifiable @NotNull Set<Tetromino> SET = Set.of(values());
   }
   
   /* Note:
@@ -12,15 +13,15 @@ public class SevenBag implements java.util.function.Supplier<SevenBag.Tetromino>
     Removing the last element of a List is O(1) whereas it’s O(n) for the first.
     This design optimizes for both shuffling (as a RandomAccess) and single-end de-queuing
   */
-  protected ArrayList<Tetromino> bag = new ArrayList<>(7);
+  protected @NotNull ArrayList<Tetromino> bag = new ArrayList<>(7);
   
-  protected final Random random;
-  public SevenBag(Random random) {
+  protected final @Nullable Random random;
+  public SevenBag(@Nullable Random random) {
     this.random = random;
   }
   public SevenBag() { this(null); }
   
-  @Override public Tetromino get() {
+  @Override public @NotNull Tetromino get() {
     if(bag.isEmpty()) {
       bag.addAll(Tetromino.SET);
       if(random == null)
