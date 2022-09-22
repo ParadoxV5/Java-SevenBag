@@ -6,18 +6,18 @@
 >
   <modelVersion>4.0.0</modelVersion>
   <groupId>xyz.paradoxv5</groupId>
-  <artifactId></artifactId>
-  <name></name>
-  <version></version>
+  <artifactId>sevenbag</artifactId>
+  <name>SevenBag</name>
+  <version>2.0-SNAPSHOT</version>
   
   <developers><developer>
     <id>ParadoxV5</id>
     <url>https://github.com/ParadoxV5</url>
   </developer></developers>
   <licenses><license>
-    <name></name>
-    <comments></comments>
-    <url></url>
+    <name>BSL-1.0</name>
+    <comments>Boost Software License 1.0</comments>
+    <url>https://www.boost.org/users/license.html</url>
   </license></licenses>
   
   <build>
@@ -27,24 +27,6 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.10.1</version>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.4.1</version>
-        <configuration>
-          <links>
-            <link>https://javadoc.io/doc/org.jetbrains/annotations/23.0/</link>
-          </links>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
-        <configuration>
-          <mainClass></mainClass>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
   <properties>
@@ -52,13 +34,6 @@
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
   
-  <!--<repositories>
-    <repository>
-      <id>github</id>
-      <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/ParadoxV5/</url>
-    </repository>
-  </repositories>-->
   <dependencies>
     <dependency>
       <groupId>org.jetbrains</groupId>
@@ -74,17 +49,12 @@
   </dependencies>
   
   <scm>
-    <url>https://github.com/ParadoxV5/</url>
-    <developerConnection>scm:git:https://github.com/ParadoxV5/</developerConnection>
+    <url>https://github.com/ParadoxV5/Java-SevenBag</url>
+    <developerConnection>scm:git:https://github.com/ParadoxV5/Java-SevenBag</developerConnection>
   </scm>
-  <distributionManagement><repository>
-    <id>github</id>
-    <name>GitHub Packages</name>
-    <url>https://maven.pkg.github.com/ParadoxV5/</url>
-  </repository></distributionManagement>
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/ParadoxV5//issues</url>
+    <url>https://github.com/ParadoxV5/Java-SevenBag/issues</url>
   </issueManagement>
   
 </project>
