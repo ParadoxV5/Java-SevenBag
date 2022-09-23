@@ -1,0 +1,11 @@
+version: 2
+updates:
+
+- package-ecosystem: maven
+  directory: /
+  ignore:
+  - update-types: [version-update:semver-major]
+    dependency-name: '*'
+  schedule:
+    interval: weekly
+  assignees: [ParadoxV5]
