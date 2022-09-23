@@ -8,9 +8,9 @@ on:
     paths: [src/**]
 jobs:
   
-  build:
+  test:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 2
     steps:
     
     - uses: actions/checkout@v3
