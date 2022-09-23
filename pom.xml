@@ -8,7 +8,7 @@
   <groupId>xyz.paradoxv5</groupId>
   <artifactId>sevenbag</artifactId>
   <name>SevenBag</name>
-  <version>2.0-SNAPSHOT</version>
+  <version>2.0</version>
   
   <developers><developer>
     <id>ParadoxV5</id>
@@ -58,8 +58,8 @@
     <developerConnection>scm:git:https://github.com/ParadoxV5/Java-SevenBag</developerConnection>
   </scm>
   <issueManagement>
-    <system>GitHub Issues</system>
-    <url>https://github.com/ParadoxV5/Java-SevenBag/issues</url>
+    <system>GitHub Discussions</system>
+    <url>https://github.com/ParadoxV5/Java-SevenBag/discussions</url>
   </issueManagement>
   
 </project>
